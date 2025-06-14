@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Harshit",
+  "description": "Advanced Gesture Recognition Smart Dashboard using MPU6050",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "mpu", "top": -50, "left": 180, "attrs": {} },
+    { "type": "wokwi-led", "id": "ledFan", "top": 150, "left": -80, "attrs": { "color": "red", "label": "FAN" }},
+    { "type": "wokwi-led", "id": "ledLight", "top": 150, "left": -30, "attrs": { "color": "yellow", "label": "LIGHT" }},
+    { "type": "wokwi-led", "id": "ledDoor", "top": 150, "left": 20, "attrs": { "color": "green", "label": "DOOR" }},
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": 150, "left": 80, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND", "mpu:GND", "black" ],
+    [ "uno:5V", "mpu:VCC", "red" ],
+    [ "uno:A4", "mpu:SDA", "green" ],
+    [ "uno:A5", "mpu:SCL", "blue" ],
+
+    [ "uno:2", "ledFan:A", "orange" ],
+    [ "uno:3", "ledLight:A", "yellow" ],
+    [ "uno:4", "ledDoor:A", "green" ],
+    [ "uno:5", "buzzer:1", "purple" ],
+
+    [ "ledFan:C", "uno:GND", "black" ],
+    [ "ledLight:C", "uno:GND", "black" ],
+    [ "ledDoor:C", "uno:GND", "black" ],
+    [ "buzzer:2", "uno:GND", "black" ]
+  ]
+}
